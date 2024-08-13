@@ -4,8 +4,9 @@ import { Box } from '@chakra-ui/react';
 import useProfile from './useProfile';
 import UserCard from '@/components/UserCard';
 import ErrorPage from '@/components/ErrorPage';
+import { ProfilePagePropType } from '@/app/types';
 
-const ProfilePage = ({ params }: { params: { id: string } }) => {
+const ProfilePage = ({ params }: ProfilePagePropType) => {
   const { userDetails } = useProfile({ id: params?.id });
 
   return (

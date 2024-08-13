@@ -8,11 +8,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ErrorPagePropType } from '@/app/types';
+import Link from 'next/link';
 
-const ErrorPage = ({
-  isInvalidRoute,
-  problemFetchingData,
-}: ErrorPagePropType) => {
+const ErrorPage = ({ isInvalidRoute }: ErrorPagePropType) => {
   const textColor = useColorModeValue('gray.600', 'gray.200');
 
   return (
@@ -31,13 +29,11 @@ const ErrorPage = ({
             ? "Oops! The page you're looking for doesn't exist."
             : "We're having trouble fetching the data you requested."}
         </Text>
-        <Button
-          colorScheme={isInvalidRoute ? 'orange' : 'blue'}
-          size='lg'
-          onClick={() => (window.location.href = '/')}
-        >
-          Go to Homepage
-        </Button>
+        <Link href={'/'}>
+          <Button colorScheme={isInvalidRoute ? 'orange' : 'blue'} size='lg'>
+            Go to Homepage
+          </Button>
+        </Link>
       </VStack>
     </Box>
   );

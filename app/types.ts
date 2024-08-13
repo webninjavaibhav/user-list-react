@@ -39,5 +39,8 @@ export type UserProfileType = {
 
 export type ErrorPagePropType = {
   isInvalidRoute?: boolean;
-  problemFetchingData?: boolean;
 };
+
+export type UseProfilePropType = { id: string };
+
+export type ProfilePagePropType = { params: { id: string } }

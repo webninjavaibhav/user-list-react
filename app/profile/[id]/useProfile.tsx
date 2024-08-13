@@ -1,8 +1,8 @@
-import { UserProfileType } from '@/app/types';
+import { UseProfilePropType, UserProfileType } from '@/app/types';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 
-const useProfile = ({ id }: { id: string }) => {
+const useProfile = ({ id }: UseProfilePropType) => {
   const [errors, setErrors] = useState<string[]>([]);
   const isValidId = id && !Number.isNaN(+id);
 
